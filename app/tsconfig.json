@@ -1,9 +1,25 @@
 {
     "extends": "../tsconfig.base",
     "compilerOptions": {
-        "removeComments": true
+        "removeComments": true,
+
+        // directs all the compiled output to a single file
+        // 'outFile' property isn't compatible with all module formats 
+        // "outFile": "../js/app.js"
+
+        // specifies module format for tsc compiler to output
+        // ('commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext')
+        "module": "commonjs"
     },
-    "include": [
-        "./**/*"
+
+    // specifies the array of files we want the tsc to compile
+    "files": [
+        "./app.ts"
     ]
+
+    // instructs the tsc compiler to compile all files in this directory
+    // and all sub-directories
+    // "include": [
+    //     "./**/*"
+    // ]
 }
